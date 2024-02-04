@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 //http://localhost:3001/api/tags/:id
+//http://localhost:3001/api/tags/3
 router.get('/:id', async (req, res) => {
   try {
     const oneTagData = await Tag.findByPk(req.params.id, {
@@ -39,6 +40,7 @@ router.post('/', async (req, res) => {
 });
 
 //http://localhost:3001/api/tags/:id
+//http://localhost:3001/api/tags/2
 router.put('/:id', async (req, res) => {
   try {
     const tagData = await Tag.update(req.body, {
@@ -57,6 +59,7 @@ router.put('/:id', async (req, res) => {
 });
 
 //http://localhost:3001/api/tags/:id
+//http://localhost:3001/api/tags/2
 router.delete('/:id', async (req, res) => {
   try {
     const tagData = await Tag.destroy({

@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
+//http://localhost:3001/api/categories
 router.get('/', async (req, res) => {
   try {
     const categoryData = await Category.findAll({
@@ -13,6 +14,7 @@ router.get('/', async (req, res) => {
 }
 });
 
+//http://localhost:3001/api/categories/4
 router.get('/:id', async (req, res) => {
   try {
     const oneCategoryData = await Category.findByPk(req.params.id, {
@@ -28,6 +30,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+//http://localhost:3001/api/categories
 router.post('/', async (req, res) => {
   try {
     const categoryData = await Category.create(req.body);
@@ -37,6 +40,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+//http://localhost:3001/api/categories/2
 router.put('/:id', async (req, res) => {
   try {
     const categoryData = await Category.update(req.body, {
@@ -54,6 +58,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+//http://localhost:3001/api/categories/2
 router.delete('/:id', async (req, res) => {
   try {
     const categoryData = await Category.destroy({
